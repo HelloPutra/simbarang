@@ -101,4 +101,43 @@ class Perbaikan extends CI_Controller {
  		redirect('perbaikan/index');
 	}
 
+	function fungsi_proses($id_perbaikan)
+	{
+		$keterangan = $this->input->post('keterangan');
+		$data = array(
+			'status' => 'Diproses'
+	 	);
+	 	$where = array(
+	 		'id_perbaikan' => $id_perbaikan
+	 	);
+	 	$this->perbaikan->update_data($where,$data,'tb_perbaikan');
+ 		redirect('perbaikan/index');
+	}
+
+	function fungsi_tolak($id_perbaikan)
+	{
+		$keterangan = $this->input->post('keterangan');
+		$data = array(
+			'status' => 'Ditolak'
+	 	);
+	 	$where = array(
+	 		'id_perbaikan' => $id_perbaikan
+	 	);
+	 	$this->perbaikan->update_data($where,$data,'tb_perbaikan');
+ 		redirect('perbaikan/index');
+	}
+
+	function fungsi_setuju($id_perbaikan)
+	{
+		$keterangan = $this->input->post('keterangan');
+		$data = array(
+			'status' => 'Disetujui'
+	 	);
+	 	$where = array(
+	 		'id_perbaikan' => $id_perbaikan
+	 	);
+	 	$this->perbaikan->update_data($where,$data,'tb_perbaikan');
+ 		redirect('perbaikan/index');
+	}
+
 }

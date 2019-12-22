@@ -38,8 +38,9 @@
 						       	<td>
                                     <a href="<?= base_url('perbaikan/edit/');echo $prb->id_perbaikan;?>" class="btn btn-primary"><span class="fa fa-edit"></span> Edit</a>
                                     <a href="<?= base_url('perbaikan/hapus/');echo $prb->id_perbaikan;?>" class="btn btn-danger"><span class="fa fa-trash-alt"></span> Hapus</a>
-                                    <a href="<?= base_url('Crud_Pengadaan/fungsi_setuju/');echo $prb->id_perbaikan;?>" class="btn btn-success"><span class="fa fa-check"></span> Setujui</a>
-                                    <a href="<?= base_url('Crud_Pengadaan/fungsi_tolak/');echo $prb->id_perbaikan;?>" class="btn btn-danger"><span class="fa fa-times"></span> Tolak</a>
+                                    <a href="<?= base_url('perbaikan/fungsi_proses/');echo $prb->id_perbaikan;?>" class="btn btn-info"><span class="fa fa-check"></span> Proses</a>
+                                    <a href="<?= base_url('perbaikan/fungsi_setuju/');echo $prb->id_perbaikan;?>" class="btn btn-success"><span class="fa fa-check"></span> Setujui</a>
+                                    <a href="<?= base_url('perbaikan/fungsi_tolak/');echo $prb->id_perbaikan;?>" class="btn btn-danger"><span class="fa fa-times"></span> Tolak</a>
                                 </td>
                                 </tr>
                             <?php } ?>

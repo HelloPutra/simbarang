@@ -46,15 +46,15 @@
                                             <a href="<?= base_url('pengadaan/edit/');echo $pg->id_pengadaan;?>" class="btn btn-primary">Edit</a>
                                             <a href="<?= base_url('pengadaan/hapus/');echo $pg->id_pengadaan;?>" class="btn btn-danger">Hapus</a>
                                         <?php }elseif ($session['jabatan'] == 'Kepala Asset') { ?>
-                                            <a href="<?= base_url('pengadaan/fungsi_setuju/');echo $pg->id_pengadaan;?>" class="btn btn-success">Proses</a>
-                                            <a href="<?= base_url('pengadaan/fungsi_setuju/');echo $pg->id_pengadaan;?>" class="btn btn-danger">Tolak</a>
+                                            <a href="<?= base_url('pengadaan/fungsi_proses/');echo $pg->id_pengadaan;?>" class="btn btn-success">Proses</a>
+                                            <a href="<?= base_url('pengadaan/fungsi_tolak/');echo $pg->id_pengadaan;?>" class="btn btn-danger">Tolak</a>
                                         <?php }elseif ($session['jabatan'] == 'Kepala Keuangan') { ?>
                                             <a href="<?= base_url('pengadaan/fungsi_setuju/');echo $pg->id_pengadaan;?>" class="btn btn-success">Setujui</a>
                                             <a href="<?= base_url('pengadaan/fungsi_tolak/');echo $pg->id_pengadaan;?>" class="btn btn-danger">Tolak</a>
                                         <?php }else{  ?>
                                             <a href="<?= base_url('pengadaan/edit/');echo $pg->id_pengadaan;?>" class="btn btn-primary"><span class="fa fa-edit"></span> Edit</a>
                                             <a href="<?= base_url('pengadaan/hapus/');echo $pg->id_pengadaan;?>" class="btn btn-danger"><span class="fa fa-trash-alt"></span> Hapus</a>
-                                            <a href="<?= base_url('pengadaan/fungsi_setuju/');echo $pg->id_pengadaan;?>" class="btn btn-info"><span class="fa fa-clock"></span> Proses</a>
+                                            <a href="<?= base_url('pengadaan/fungsi_proses/');echo $pg->id_pengadaan;?>" class="btn btn-info"><span class="fa fa-clock"></span> Proses</a>
                                             <a href="<?= base_url('pengadaan/fungsi_setuju/');echo $pg->id_pengadaan;?>" class="btn btn-success"><span class="fa fa-check"></span> Setujui</a>
                                             <a href="<?= base_url('pengadaan/fungsi_tolak/');echo $pg->id_pengadaan;?>" class="btn btn-danger"><span class="fa fa-times"></span> Tolak</a>
                                         <?php } ?>

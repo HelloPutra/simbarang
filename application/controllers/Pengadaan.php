@@ -100,4 +100,47 @@ class Pengadaan extends CI_Controller {
  		redirect('pengadaan/index');
 	}
 
+
+	function fungsi_proses($id_pengadaan)
+	{
+		$keterangan = $this->input->post('keterangan');
+		$data = array(
+			'status' => 'Diproses',
+			'keterangan' => $keterangan
+	 	);
+	 	$where = array(
+	 		'id_pengadaan' => $id_pengadaan
+	 	);
+	 	$this->pengadaan->update_data($where,$data,'tb_pengadaan');
+ 		redirect('pengadaan/index');
+	}
+
+	function fungsi_tolak($id_pengadaan)
+	{
+		$keterangan = $this->input->post('keterangan');
+		$data = array(
+			'status' => 'Ditolak',
+			'keterangan' => $keterangan
+	 	);
+	 	$where = array(
+	 		'id_pengadaan' => $id_pengadaan
+	 	);
+	 	$this->pengadaan->update_data($where,$data,'tb_pengadaan');
+ 		redirect('pengadaan/index');
+	}
+
+	function fungsi_setuju($id_pengadaan)
+	{
+		$keterangan = $this->input->post('keterangan');
+		$data = array(
+			'status' => 'Disetujui',
+			'keterangan' => $keterangan
+	 	);
+	 	$where = array(
+	 		'id_pengadaan' => $id_pengadaan
+	 	);
+	 	$this->pengadaan->update_data($where,$data,'tb_pengadaan');
+ 		redirect('pengadaan/index');
+	}
+
 }
