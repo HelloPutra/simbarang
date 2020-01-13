@@ -5,7 +5,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Budget vs Sales</h4>
+                        <h4>AGRAPANA &mdash; MANAGEMENT SYSTEM</h4>
                     </div>                    
                     <div class="card-body">
                         <div class="row">
@@ -16,7 +16,11 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Data Assets</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?php foreach ($countasset as $s) {
+                                                        echo $s->data." Data Asset";
+                                                    } ?>
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-archive fa-2x text-gray-300"></i>
@@ -35,7 +39,11 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Pengajuan Asset</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">130</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?php foreach ($countpengajuan as $s) {
+                                                        echo $s->data." Data Pengajuan";
+                                                    } ?>
+                                                </div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-file-signature fa-2x text-gray-300"></i>
@@ -54,15 +62,10 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pengeluaran Barang</div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="progress progress-sm mr-2">
-                                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?php foreach ($countkeluar as $s) {
+                                                        echo $s->data." Data Asset Keluar";
+                                                    } ?>
                                                 </div>
                                             </div>
                                             <div class="col-auto">
@@ -82,15 +85,10 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Perbaikan Mesin</div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">33%</div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="progress progress-sm mr-2">
-                                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div>
-                                                    </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    <?php foreach ($countperbaikan as $s) {
+                                                        echo $s->data." Data Perbaikan Asset";
+                                                    } ?>
                                                 </div>
                                             </div>
                                             <div class="col-auto">

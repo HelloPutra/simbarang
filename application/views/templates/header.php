@@ -98,8 +98,8 @@ $session = $this->session->userdata('login');
                         <li class="nav-item dropdown ">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Laporan</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="<?= base_url('dashboard/pengadaan_asset') ?>">Laporan Pengadaan</a></li>
-                                <li><a class="nav-link" href="<?= base_url('dashboard/lokasi_asset') ?>">Laporan Perbaikan </a></li>
+                                <li><a class="nav-link" href="<?= base_url('pengadaan_report/index')  ?>">Laporan Pengadaan</a></li>
+                                <li><a class="nav-link" href="<?= base_url('perbaikan_report/index') ?>">Laporan Perbaikan </a></li>
                             </ul>
                         </li>
                     </ul>
