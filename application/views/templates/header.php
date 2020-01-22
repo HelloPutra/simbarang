@@ -95,6 +95,8 @@ $session = $this->session->userdata('login');
                         </li>
                         <li><a class="nav-link" href="<?= base_url('perbaikan/index') ?>">Perbaikan Mesin</a>
                         </li>
+                        <li><a class="nav-link" href="<?= base_url('perbaikan_bangunan/index') ?>">Perbaikan Bangunan</a>
+                        </li>
 
                         <li class="menu-header">Laporan</li>
                         <li class="nav-item dropdown ">
