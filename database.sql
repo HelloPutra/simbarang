@@ -68,7 +68,7 @@ CREATE TABLE `tb_bangunan` (
 
 insert  into `tb_bangunan`(`id_bangunan`,`nama_bangunan`,`lokasi`,`luas`,`keterangan`) values 
 (1,'Bangunan Kantor 1 Ciawi','Jl. Pelita 1 Ciawi','1200m','Ciawi'),
-(2,'Kantor 2','Jl. Perjuangan','1500m','');
+(2,'Bangunan Kantor 2','Jl. Perjuangan','1500m','Taman Sari');
 
 /*Table structure for table `tb_bg_bangunan` */
 
@@ -83,14 +83,16 @@ CREATE TABLE `tb_bg_bangunan` (
   PRIMARY KEY (`id_bg_bangunan`),
   KEY `id_bangunan` (`id_bangunan`),
   CONSTRAINT `tb_bg_bangunan_ibfk_1` FOREIGN KEY (`id_bangunan`) REFERENCES `tb_bangunan` (`id_bangunan`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_bg_bangunan` */
 
 insert  into `tb_bg_bangunan`(`id_bg_bangunan`,`id_bangunan`,`nama_bagian`,`status`,`keterangan`) values 
-(6,NULL,'Kusen Jendela Samping','Baik','Mantap'),
-(7,2,'Kusen Jendela Samping','Baik','Mantap'),
-(8,1,'Pintu Depan','Baik','Mantap');
+(6,2,'Kusen Jendela Samping','Baik','Mantap'),
+(7,2,'Kusen Jendela Samping','Rusak','Mantap'),
+(8,1,'Pintu Depan','Rusak','Mantap'),
+(9,1,'Pintu WC','Rusak','Segera Perbaiki!'),
+(10,2,'Kusen Jendela Depan','Baik','Mantap');
 
 /*Table structure for table `tb_bg_mesin` */
 
@@ -199,16 +201,40 @@ CREATE TABLE `tb_perbaikan` (
   KEY `id_bg_mesin` (`id_bg_mesin`),
   CONSTRAINT `tb_perbaikan_ibfk_1` FOREIGN KEY (`id_asset`) REFERENCES `tb_asset` (`id_asset`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tb_perbaikan_ibfk_2` FOREIGN KEY (`id_bg_mesin`) REFERENCES `tb_bg_mesin` (`id_bg_mesin`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tb_perbaikan` */
 
 insert  into `tb_perbaikan`(`id_perbaikan`,`id_asset`,`tgl_perbaikan`,`tgl_selesai`,`jumlah_perbaikan`,`biaya_perbaikan`,`status`,`id_bg_mesin`) values 
 (1,14,'2019-11-19','2019-11-21',2,10000,'Ditolak',3),
-(2,13,'2019-11-21','2019-11-22',2,9,'Pending',3),
-(3,14,'2019-12-23','2019-12-26',1,99999,'Pending',3),
+(2,13,'2019-11-21','2019-11-22',2,9,'Disetujui',3),
+(3,14,'2019-12-23','2019-12-26',1,99999,'Disetujui',3),
 (6,15,'2019-12-20','2019-12-28',3,234567,'Pending',4),
-(7,14,'2019-12-27','2019-12-31',23,32,'Pending',5);
+(7,14,'2019-12-27','2019-12-31',23,32,'Pending',5),
+(8,13,'2020-01-04','2020-01-23',2,2,'Pending',3),
+(9,15,'2020-01-04','2020-01-08',2,3,'Pending',4);
+
+/*Table structure for table `tb_perbaikan_bangunan` */
+
+DROP TABLE IF EXISTS `tb_perbaikan_bangunan`;
+
+CREATE TABLE `tb_perbaikan_bangunan` (
+  `id_perbaikan_bangunan` int(11) NOT NULL AUTO_INCREMENT,
+  `id_bg_bangunan` int(11) DEFAULT NULL,
+  `tgl_perbaikan` date DEFAULT NULL,
+  `tgl_selesai` date DEFAULT NULL,
+  `biaya` varchar(15) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id_perbaikan_bangunan`),
+  KEY `id_bg_bangunan` (`id_bg_bangunan`),
+  CONSTRAINT `tb_perbaikan_bangunan_ibfk_1` FOREIGN KEY (`id_bg_bangunan`) REFERENCES `tb_bg_bangunan` (`id_bg_bangunan`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_perbaikan_bangunan` */
+
+insert  into `tb_perbaikan_bangunan`(`id_perbaikan_bangunan`,`id_bg_bangunan`,`tgl_perbaikan`,`tgl_selesai`,`biaya`,`status`) values 
+(2,7,'2020-01-10','2020-02-10','1900000','Ditolak'),
+(3,8,'2020-01-23','2020-01-26','500000','Disetujui');
 
 /*Table structure for table `tb_user` */
 
