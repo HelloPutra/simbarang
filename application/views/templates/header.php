@@ -76,11 +76,13 @@ $session = $this->session->userdata('login');
                                 <span>Data Master</span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="<?= base_url('kategori/index') ?>">Master Kategori</a></li>
-                                <li><a class="nav-link" href="<?= base_url('asset/index') ?>">Master Asset</a></li>
-                                <li><a class="nav-link" href="<?= base_url('user/index') ?>">Master User</a></li>
-                                <li><a class="nav-link" href="<?= base_url('mesin/index') ?>">Master Mesin</a></li>
-                                <li><a class="nav-link" href="<?= base_url('bgmesin/index') ?>">Master Bagian Mesin</a></li>
+                                <li><a class="nav-link" href="<?= base_url('kategori/index') ?>">Kategori</a></li>
+                                <li><a class="nav-link" href="<?= base_url('asset/index') ?>">Asset</a></li>
+                                <li><a class="nav-link" href="<?= base_url('user/index') ?>">User</a></li>
+                                <li><a class="nav-link" href="<?= base_url('mesin/index') ?>">Mesin</a></li>
+                                <li><a class="nav-link" href="<?= base_url('bgmesin/index') ?>">Bagian Mesin</a></li>
+                                <li><a class="nav-link" href="<?= base_url('bangunan/index') ?>">Bangunan</a></li>
+                                <li><a class="nav-link" href="<?= base_url('bgbangunan/index') ?>">Bagian Bangunan</a></li>
                             </ul>
                         </li>
                         
