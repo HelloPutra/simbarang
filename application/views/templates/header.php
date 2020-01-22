@@ -90,14 +90,15 @@ $session = $this->session->userdata('login');
                         <li>
                             <a class="nav-link" href="<?= base_url('pengeluaran/index') ?>">Pengeluaran Asset</a>
                         </li>
-                        <li>
-                            <a class="nav-link" href="<?= base_url('pengadaan/index') ?>">Pengadaan Asset</a>
-                        </li>
-                        <li><a class="nav-link" href="<?= base_url('perbaikan/index') ?>">Perbaikan Mesin</a>
-                        </li>
-                        <li><a class="nav-link" href="<?= base_url('perbaikan_bangunan/index') ?>">Perbaikan Bangunan</a>
-                        </li>
-
+                        <?php if ($this->session->login['pengadaan'] != 0) { ?>
+                           <li>
+                               <a class="nav-link" href="<?= base_url('pengadaan/index') ?>">Pengadaan Asset</a>
+                           </li>
+                           <li><a class="nav-link" href="<?= base_url('perbaikan/index') ?>">Perbaikan Mesin</a>
+                           </li>
+                           <li><a class="nav-link" href="<?= base_url('perbaikan_bangunan/index') ?>">Perbaikan Bangunan</a>
+                           </li>
+                        <?php } ?>
                         <li class="menu-header">Laporan</li>
                         <li class="nav-item dropdown ">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Laporan</span></a>
@@ -105,6 +106,20 @@ $session = $this->session->userdata('login');
                                 <li><a class="nav-link" href="<?= base_url('pengadaan_report/index')  ?>">Laporan Pengadaan</a></li>
                                 <li><a class="nav-link" href="<?= base_url('perbaikan_report/index') ?>">Laporan Perbaikan </a></li>
                             </ul>
+                        </li>
+                        <li class="menu-header">Pengaturan</li>
+                        <li>
+                            <?php if ($this->session->login['jabatan'] == 'Admin') { ?>
+                                <?php if ($this->session->login['pengadaan'] != 0) { ?>
+                                <div class="nav-link">
+                                    <a style="color: #FFF;" href="<?= base_url('setting/status/0'); ?>" class="btn btn-secondary">NON-AKTIFKAN PENGADAAN</a>
+                                </div>
+                                <?php }else{ ?>
+                                <div class="nav-link">
+                                    <a style="color: #FFF;" href="<?= base_url('setting/status/1'); ?>" class="btn btn-primary">AKTIFKAN PENGADAAN</a>
+                                </div>
+                                <?php } ?>
+                            <?php } ?>
                         </li>
                     </ul>
                 </aside>

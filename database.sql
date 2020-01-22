@@ -183,6 +183,20 @@ insert  into `tb_pengadaan`(`id_pengadaan`,`id_asset`,`tgl_pengadaan`,`jumlah_ke
 (6,13,'2019-10-14',6,6666666,'Pending','KEPO'),
 (7,15,'2020-01-13',9898,890820000,'Pending','Bagian Barang Kantor');
 
+/*Table structure for table `tb_pengadaan_setting` */
+
+DROP TABLE IF EXISTS `tb_pengadaan_setting`;
+
+CREATE TABLE `tb_pengadaan_setting` (
+  `status` char(1) DEFAULT NULL,
+  `last_active` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tb_pengadaan_setting` */
+
+insert  into `tb_pengadaan_setting`(`status`,`last_active`) values 
+('1','2020-01-23');
+
 /*Table structure for table `tb_perbaikan` */
 
 DROP TABLE IF EXISTS `tb_perbaikan`;
@@ -256,7 +270,7 @@ insert  into `tb_user`(`nip`,`nama`,`jabatan`,`no_telp`,`username`,`password`) v
 ('001','Pak Admin Saja','Admin','001','admin','21232f297a57a5a743894a0e4a801fc3'),
 ('011111','ektur','Direktur','0193014904','ektur','80c9af721910cb93559010d7f47e91bb'),
 ('0115355','Juragan','Kepala Keuangan','0183083013','agan','21232f297a57a5a743894a0e4a801fc3'),
-('10115344','Yudi','Kepala Asset','092082058','yudi','c232864d5de2064450915c0b9e4cc0b5'),
+('10115344','Yudi','Kepala Bagian','092082058','yudi','c232864d5de2064450915c0b9e4cc0b5'),
 ('10115359','Ghani','Kepala Bagian','089606264375','ghani','21232f297a57a5a743894a0e4a801fc3');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

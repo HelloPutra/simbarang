@@ -20,14 +20,17 @@ class Login extends CI_Controller{
 			'password' => md5($password)
 			);
 		$cek = $this->M_Login->cek_login("tb_user",$where)->num_rows();
+		$pengadaan = $this->M_Login->getpengadaan()->row_array();
 		$jabatan = $this->M_Login->getjabatan("tb_user",$where);
 		$role = $jabatan["jabatan"];
+		$test = $pengadaan['status'];
 		if($cek > 0){
  
 			$data_session = array(
 				'nama' => $username,
 				'status' => "login",
-				'jabatan' => $role
+				'jabatan' => $role,
+				'pengadaan' => $test
 				);
  
 			$this->session->set_userdata('login',$data_session);
@@ -37,6 +40,12 @@ class Login extends CI_Controller{
 		}else{
 			echo "Username dan password salah !";
 		}
+	}
+
+	function bukti(){
+		$pengadaan = $this->M_Login->getpengadaan()->row_array();
+		$test = $pengadaan['status'];
+		print_r($test);
 	}
  
 	function logout(){
